@@ -1,7 +1,5 @@
 package com.ebanking.EBanking.Modele;
 
-import java.util.Date;
-
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -13,9 +11,10 @@ import lombok.Data;
 @Entity
 @Data
 @AllArgsConstructor
-public class Client {
+public class Beneficiare {
 	@Id @GeneratedValue(strategy = GenerationType.AUTO)
-	Long clientId;
-	String nom, email, mdp, phone;
-	Date created;
+	private Long id;
+	private String nom;
+	private String prenom;
+	private int numeroCompte;
 }

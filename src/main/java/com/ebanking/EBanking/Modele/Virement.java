@@ -1,5 +1,6 @@
 package com.ebanking.EBanking.Modele;
 
+import java.math.BigDecimal;
 import java.util.Date;
 
 import javax.persistence.Entity;
@@ -13,9 +14,11 @@ import lombok.Data;
 @Entity
 @Data
 @AllArgsConstructor
-public class Client {
+public class Virement {
 	@Id @GeneratedValue(strategy = GenerationType.AUTO)
-	Long clientId;
-	String nom, email, mdp, phone;
-	Date created;
+	private Long id ;
+	private Date dateCreation ;
+	private Date dateExecution ;
+	private BigDecimal montant;
+	private String motif;
 }
