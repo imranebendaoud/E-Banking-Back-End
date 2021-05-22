@@ -8,5 +8,6 @@ import com.ebanking.EBanking.Modele.Client;
 
 public interface ClientRepo extends JpaRepository<Client, Long> {
 	void deleteClientByclientId(Long id);
+	Optional<Client> findClientByNom(String nom);
 	Optional<Client> findClientByclientId(Long id);
 }

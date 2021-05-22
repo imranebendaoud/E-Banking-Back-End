@@ -41,5 +41,7 @@ public class ClientService {
 		clientRepo.deleteClientByclientId(id);
 	}
 	
-	
+	public Client findClientByNom(String nom) {
+		return clientRepo.findClientByNom(nom).orElseThrow(() -> new UserNotFoundException("User by name " + nom + " was not found"));
+	}
 }
