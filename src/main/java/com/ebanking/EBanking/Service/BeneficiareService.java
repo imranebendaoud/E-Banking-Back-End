@@ -6,7 +6,7 @@ import java.util.UUID;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import com.ebanking.EBanking.Exception.BeneficiareNotFoundException;
+import com.ebanking.EBanking.Exception.NotFoundException;
 import com.ebanking.EBanking.Modele.Beneficiare;
 import com.ebanking.EBanking.Repo.BeneficiareRepo;
 
@@ -34,7 +34,7 @@ public class BeneficiareService {
 	}
 	
 	public Beneficiare findBeneficiareById(Long id) {
-		return beneficiareRepo.findBeneficiareByid(id).orElseThrow(() -> new BeneficiareNotFoundException("Beneficiare avec le id"+id+"est introuvable"));
+		return beneficiareRepo.findBeneficiareByid(id).orElseThrow(() -> new NotFoundException("Beneficiare avec le id"+id+"est introuvable"));
 	}
 	
 	public void deleteBeneficiare(Long id) {

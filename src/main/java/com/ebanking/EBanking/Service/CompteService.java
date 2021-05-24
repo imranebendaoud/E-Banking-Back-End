@@ -6,8 +6,8 @@ import java.util.UUID;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import com.ebanking.EBanking.Exception.CompteNotFoundException;
-import com.ebanking.EBanking.Exception.UserNotFoundException;
+import com.ebanking.EBanking.Exception.NotFoundException;
+import com.ebanking.EBanking.Exception.NotFoundException;
 import com.ebanking.EBanking.Modele.Compte;
 import com.ebanking.EBanking.Repo.CompteRepo;
 
@@ -33,7 +33,7 @@ public class CompteService {
 	}
 	
 	public Compte findCompteBynumeroCompte(String numeroCompte) {
-		return compteRepo.findCompteBynumeroCompte(numeroCompte).orElseThrow(() -> new CompteNotFoundException("Compte avec le numero"+numeroCompte+"est introuvable"));
+		return compteRepo.findCompteBynumeroCompte(numeroCompte).orElseThrow(() -> new NotFoundException("Compte avec le numero"+numeroCompte+"est introuvable"));
 	}
 	
 	public void deleteCompte(String numeroCompte) {

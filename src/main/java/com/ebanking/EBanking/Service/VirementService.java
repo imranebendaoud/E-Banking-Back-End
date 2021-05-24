@@ -6,7 +6,7 @@ import java.util.UUID;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import com.ebanking.EBanking.Exception.VirementNotFoundException;
+import com.ebanking.EBanking.Exception.NotFoundException;
 import com.ebanking.EBanking.Modele.Virement;
 import com.ebanking.EBanking.Repo.VirementRepo;
 
@@ -29,6 +29,6 @@ public class VirementService {
 	}
 	
 	public Virement findVirementById(Long id){
-		return virementRepo.findVirementByid(id).orElseThrow(()-> new VirementNotFoundException("Virement avec id "+id+" est introuvable"));
+		return virementRepo.findVirementByid(id).orElseThrow(()-> new NotFoundException("Virement avec id "+id+" est introuvable"));
 	}
 }

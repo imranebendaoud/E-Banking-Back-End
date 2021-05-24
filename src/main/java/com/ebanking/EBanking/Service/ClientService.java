@@ -1,5 +1,6 @@
 package com.ebanking.EBanking.Service;
 
+
 import java.util.List;
 import java.util.UUID;
 
@@ -8,7 +9,7 @@ import javax.transaction.Transactional;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import com.ebanking.EBanking.Exception.UserNotFoundException;
+import com.ebanking.EBanking.Exception.NotFoundException;
 import com.ebanking.EBanking.Modele.Client;
 import com.ebanking.EBanking.Repo.ClientRepo;
 @Service
@@ -22,7 +23,7 @@ public class ClientService {
 	}
 	
 	public Client addClient(Client client) {
-		client.setClientId(UUID.randomUUID().getMostSignificantBits());
+		client.setId(UUID.randomUUID().getMostSignificantBits());
 		return clientRepo.save(client);
 	}
 	public Client updateClient(Client client) {
@@ -34,7 +35,7 @@ public class ClientService {
 	}
 	
 	public Client findClientById(Long id) {
-		return clientRepo.findClientByclientId(id).orElseThrow(() -> new UserNotFoundException("User by id " + id + " was not found"));
+		return clientRepo.findClientByclientId(id).orElseThrow(() -> new NotFoundException("User by id " + id + " was not found"));
 	}
 	
 	public void deleteClient(Long id) {
@@ -42,6 +43,6 @@ public class ClientService {
 	}
 	
 	public Client findClientByNom(String nom) {
-		return clientRepo.findClientByNom(nom).orElseThrow(() -> new UserNotFoundException("User by name " + nom + " was not found"));
+		return clientRepo.findClientByNom(nom).orElseThrow(() -> new NotFoundException("User by name " + nom + " was not found"));
 	}
 }
