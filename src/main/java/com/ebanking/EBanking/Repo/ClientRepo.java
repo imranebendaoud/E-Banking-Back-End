@@ -7,7 +7,7 @@ import org.springframework.data.jpa.repository.JpaRepository;
 import com.ebanking.EBanking.Modele.Client;
 
 public interface ClientRepo extends JpaRepository<Client, Long> {
-	void deleteClientByclientId(Long id);
-	Optional<Client> findClientByNom(String nom);
-	Optional<Client> findClientByclientId(Long id);
+	void deleteClientByid(Long id);
+	Optional<Client> findClientBynom(String nom);
+	Optional<Client> findClientByid(Long id);
 }

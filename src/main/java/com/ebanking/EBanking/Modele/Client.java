@@ -8,6 +8,7 @@ import javax.persistence.Table;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;
+import lombok.NoArgsConstructor;
 
 @Entity
 @Table(name="CLIENT")
@@ -26,6 +27,6 @@ import lombok.Data;
     @AttributeOverride(name = "role", column = @Column(name = "ROLE_CLIENT"))
 })
 
-public class Client {
+public class Client extends Utilisateur{
 
 }

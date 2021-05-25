@@ -1,5 +1,7 @@
 package com.ebanking.EBanking.Modele;
 
+import java.math.BigDecimal;
+
 import javax.persistence.*;
 
 import lombok.*;
@@ -7,6 +9,7 @@ import lombok.*;
 @Entity
 @Data 
 @Table(name="AGENT")
+@AllArgsConstructor
 @AttributeOverrides({
     @AttributeOverride(name = "id", column = @Column(name = "ID_AGENT")),
     @AttributeOverride(name = "nom", column = @Column(name = "NOM_AGENT")),

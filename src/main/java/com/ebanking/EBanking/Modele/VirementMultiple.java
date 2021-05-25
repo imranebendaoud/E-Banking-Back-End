@@ -7,9 +7,10 @@ import javax.persistence.Entity;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;
+import lombok.NoArgsConstructor;
 
 @Entity
-
+@NoArgsConstructor
 public class VirementMultiple extends Virement {
 	
 	private int nombreBeneficiares;

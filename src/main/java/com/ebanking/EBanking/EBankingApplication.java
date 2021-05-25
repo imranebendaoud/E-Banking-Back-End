@@ -10,9 +10,13 @@ import org.springframework.web.cors.CorsConfiguration;
 import org.springframework.web.cors.UrlBasedCorsConfigurationSource;
 import org.springframework.web.filter.CorsFilter;
 
-
+import com.ebanking.EBanking.Modele.Admin;
+import com.ebanking.EBanking.Modele.Agent;
+import com.ebanking.EBanking.Modele.Beneficiare;
 import com.ebanking.EBanking.Modele.Client;
 import com.ebanking.EBanking.Modele.Compte;
+import com.ebanking.EBanking.Modele.Utilisateur;
+import com.ebanking.EBanking.Modele.Virement;
 import com.ebanking.EBanking.Modele.VirementMultiple;
 
 @SpringBootApplication
@@ -21,6 +25,7 @@ public class EBankingApplication {
 
 	public static void main(String[] args) {
 		SpringApplication.run(EBankingApplication.class, args);
+		
 				
 	}
 	

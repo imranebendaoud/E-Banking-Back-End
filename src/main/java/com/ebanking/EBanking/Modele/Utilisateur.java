@@ -9,11 +9,16 @@ import javax.persistence.Id;
 import javax.persistence.Inheritance;
 import javax.persistence.InheritanceType;
 
+import lombok.AllArgsConstructor;
 import lombok.Data;
+import lombok.NoArgsConstructor;
+import lombok.experimental.SuperBuilder;
 
 @Entity
 @Data
 @Inheritance(strategy = InheritanceType.JOINED)
+@AllArgsConstructor
+@NoArgsConstructor
 public abstract class Utilisateur {
 
 	@Id
@@ -31,4 +36,5 @@ public abstract class Utilisateur {
 	String password;
 	@Column(nullable=false)
 	String role;
+	
 }

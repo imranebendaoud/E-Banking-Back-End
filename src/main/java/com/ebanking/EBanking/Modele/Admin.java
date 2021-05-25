@@ -1,12 +1,14 @@
 package com.ebanking.EBanking.Modele;
 
+
+
 import javax.persistence.*;
 
 
 import lombok.*;
 
 @Entity
-@Data
+@AllArgsConstructor
 @Table(name="ADMIN")
 @AttributeOverrides({
     @AttributeOverride(name = "id", column = @Column(name = "ID_ADMIN")),
@@ -22,5 +24,5 @@ import lombok.*;
 })
 public class Admin extends Utilisateur{
 	
-	
+
 }

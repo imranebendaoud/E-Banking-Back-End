@@ -35,14 +35,14 @@ public class ClientService {
 	}
 	
 	public Client findClientById(Long id) {
-		return clientRepo.findClientByclientId(id).orElseThrow(() -> new NotFoundException("User by id " + id + " was not found"));
+		return clientRepo.findClientByid(id).orElseThrow(() -> new NotFoundException("User by id " + id + " was not found"));
 	}
 	
 	public void deleteClient(Long id) {
-		clientRepo.deleteClientByclientId(id);
+		clientRepo.deleteClientByid(id);
 	}
 	
 	public Client findClientByNom(String nom) {
-		return clientRepo.findClientByNom(nom).orElseThrow(() -> new NotFoundException("User by name " + nom + " was not found"));
+		return clientRepo.findClientBynom(nom).orElseThrow(() -> new NotFoundException("User by name " + nom + " was not found"));
 	}
 }
