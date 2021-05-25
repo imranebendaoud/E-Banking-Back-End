@@ -19,7 +19,7 @@ public class AdminService {
 		super();
 		this.adminRepo=adminRepo;
 	}
-	public Admin addAdmint(Admin admin) {
+	public Admin addAdmin(Admin admin) {
 		admin.setId(UUID.randomUUID().getMostSignificantBits());
 		return adminRepo.save(admin);
 	}
