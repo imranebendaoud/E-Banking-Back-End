@@ -27,7 +27,7 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter{
 		
 		@Autowired
 		AdminService adminService;
-		
+		@Autowired
 		UserService service;
 		
 		@Autowired
