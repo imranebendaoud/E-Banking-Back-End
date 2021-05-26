@@ -10,6 +10,8 @@ import javax.persistence.Id;
 import javax.persistence.Inheritance;
 import javax.persistence.InheritanceType;
 
+import org.hibernate.annotations.CreationTimestamp;
+
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -22,7 +24,9 @@ import lombok.NoArgsConstructor;
 public class Virement {
 	@Id @GeneratedValue(strategy = GenerationType.AUTO)
 	private Long id ;
+	@CreationTimestamp
 	private Date dateCreation ;
+	@CreationTimestamp
 	private Date dateExecution ;
 	private BigDecimal montant;
 	private String motif;
